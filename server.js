@@ -40,5 +40,14 @@ app.get('/persons', ( req , res ) => {
     });
 });
 
+app.post('/users', ( req , res ) => {
+    const { personId, user, pass, userType, bActive } = req.body;
+    db.query('INSERT INTO users (personId, user, pass, userType, bActive) VALUES (?, ?, ?, ?, ?)',
+    [personId, user, pass, userType, bActive], (err, result) => {
+        if (err) return res.status(500).send(err);
+        res.json({ message: 'Usuario agregado', userId: result.insertId });
+    });
+});
+
 
 app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
