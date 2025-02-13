@@ -33,4 +33,12 @@ app.get('/status', (req, res) => {
 });
 
 
+app.get('/persons', ( req , res ) => {
+    db.query('SELECT * FROM catpersons',(err , results) =>{
+        if(err) return res.status(500).send(err);
+        res.json(results);
+    });
+});
+
+
 app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
