@@ -15,6 +15,7 @@ CREATE TABLE users (
   bActive TINYINT(1) NOT NULL DEFAULT '0',
   dtCreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+ - Importar el archivo catpersons.sql 
  - Configurar el archivo .env con las credenciales de usuario de la base de datos creada
 
 Ejecutar el servidor 
